@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  
+  <title>河野研究室 Webサイト更新マニュアル</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; }
+    .code-block { font-family: Consolas, Monaco, monospace; }
+    /* スムーズスクロール */
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-slate-100 py-6 sm:py-10 px-4 sm:px-6 lg:px-8 selection:bg-blue-200 text-slate-800">
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+    
+    <div class="bg-slate-800 text-white p-6 sm:p-10 text-center">
+      <h1 class="text-2xl sm:text-3xl font-bold mb-2 tracking-wide">ホームページ更新マニュアル</h1>
+      <p class="text-slate-300 text-sm sm:text-base">河野研究室 公式サイト</p>
+    </div>
+
+    <div class="p-5 sm:p-10 md:p-12">
+      <section class="mb-10">
+        <p class="text-slate-600 leading-relaxed mb-6 text-sm sm:text-base">
+          このWebサイトは、デザインや複雑なプログラムを触ることなく、<strong>文字データ（<code>data.js</code>）を書き換えるだけで自動的に更新される</strong>ように構築されています。<br>
+          以下の手順に沿って、テキストエディタ（メモ帳など）で編集を行ってください。
+        </p>
+
+        <div class="bg-slate-50 p-5 sm:p-6 rounded-xl border border-slate-200">
+          <h2 class="font-bold text-lg mb-4 flex items-center text-slate-700">
+            <i data-lucide="list" class="w-5 h-5 mr-2 text-slate-500"></i>目次
+          </h2>
+          <ul class="space-y-3 text-sm sm:text-base text-blue-600">
+            <li><a href="#rules" class="hover:underline flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-1"></i>0. 編集時の「絶対ルール」</a></li>
+            <li><a href="#hero" class="hover:underline flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-1"></i>1. キャッチコピー・基本情報の変更</a></li>
+            <li><a href="#news" class="hover:underline flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-1"></i>2. ニュース（お知らせ）の追加</a></li>
+            <li><a href="#research" class="hover:underline flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-1"></i>3. 研究内容（Research）の変更</a></li>
+            <li><a href="#member" class="hover:underline flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-1"></i>4. メンバー（経歴・学生）の更新</a></li>
+            <li><a href="#pub" class="hover:underline flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-1"></i>5. 業績リンク（Publications）の変更</a></li>
+            <li><a href="#english" class="hover:underline flex items-center"><i data-lucide="chevron-right" class="w-4 h-4 mr-1"></i>6. 英語版ページ（EN）の更新について</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="rules" class="mb-12 scroll-mt-10">
+        <div class="bg-red-50 border-l-4 border-red-500 p-5 sm:p-6 rounded-r-lg">
+          <h3 class="text-red-700 font-bold text-lg mb-4 flex items-center">
+            <i data-lucide="alert-triangle" class="w-6 h-6 mr-2"></i>編集時の３つの「絶対ルール」
+          </h3>
+          <ul class="space-y-3 text-red-900 text-sm sm:text-base">
+            <li class="flex items-start">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-500 mr-2 shrink-0 mt-0.5"></i>
+              <span>文字を囲んでいる <strong>" "（ダブルクォーテーション）</strong> は絶対に消さないでください。</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-500 mr-2 shrink-0 mt-0.5"></i>
+              <span>項目の最後にある <strong>,（カンマ）</strong> は絶対に消さないでください。</span>
+            </li>
+            <li class="flex items-start">
+              <i data-lucide="x-circle" class="w-5 h-5 text-red-500 mr-2 shrink-0 mt-0.5"></i>
+              <span>記号（" や , など）は必ず<strong>「半角」</strong>で入力してください。全角を使用するとプログラムが停止し、画面が真っ白になります。</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="hero" class="mb-12 scroll-mt-10">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-6">1. キャッチコピー・基本情報の変更</h2>
+        <p class="text-slate-600 mb-4 text-sm sm:text-base">トップページを開いたときに表示される文章や、About Us（研究室概要）の文章を変更します。</p>
+        <div class="bg-slate-800 rounded-lg p-4 sm:p-5 text-xs sm:text-sm code-block text-slate-300 overflow-x-auto whitespace-pre"><code>hero: {
+  catch: <span class="text-yellow-300">"巨大分子を自在に組み上げ、新たな機能と構造を創る"</span>,
+},
+about: {
+  title: "About Us",
+  desc: <span class="text-yellow-300">"世の中で実用化されている機能性物質の開発では...\n\n我々の研究グループのモチベーションは..."</span>,
+}</code></div>
+        <div class="mt-4 p-4 bg-slate-50 rounded-lg text-sm text-slate-600">
+          <strong class="text-slate-800">改行のテクニック：</strong><br>
+          文章の途中で改行したい場合は、Enterキーではなく <strong><code>\n</code></strong> （半角バックスラッシュと小文字のn）を入力します。段落を分けたい場合は <strong><code>\n\n</code></strong> と2回入力してください。
+        </div>
+      </section>
+
+      <section id="news" class="mb-12 scroll-mt-10">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-6">2. ニュース（お知らせ）の追加</h2>
+        <p class="text-slate-600 mb-4 text-sm sm:text-base">新しいお知らせは、<code>items: [ ]</code> の中の<strong>一番上の行</strong>にコピー＆ペーストして追加します。</p>
+        <div class="bg-slate-800 rounded-lg p-4 sm:p-5 text-xs sm:text-sm code-block text-slate-300 overflow-x-auto whitespace-pre"><code>news: {
+  title: "News",
+  items: [
+    <span class="text-emerald-400">// ↓新しいお知らせはここに追加します</span>
+    { date: <span class="text-yellow-300">"2026.05.01"</span>, text: <span class="text-yellow-300">"新しい論文が掲載されました。"</span>, isNew: <span class="text-blue-300">true</span> },
+    { date: "2026.04.01", text: "新四年生が配属されました。", isNew: false },
+  ]
+}</code></div>
+        <ul class="list-disc pl-5 mt-4 text-slate-600 space-y-1 text-sm sm:text-base">
+          <li><code>date</code> : 日付を半角で入力します。</li>
+          <li><code>text</code> : お知らせの内容を入力します。</li>
+          <li><code>isNew</code> : <code>true</code> で赤い「New」マークが付きます。不要になれば <code>false</code> に変更します。</li>
+        </ul>
+      </section>
+
+      <section id="research" class="mb-12 scroll-mt-10">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-6">3. 研究内容（Research）の変更</h2>
+        <p class="text-slate-600 mb-4 text-sm sm:text-base">研究のテーマタイトルや説明文を変更できます。画像を変更する場合は、<code>src/img/</code> フォルダに新しい画像を置き、ファイル名を書き換えます。</p>
+        <div class="bg-slate-800 rounded-lg p-4 sm:p-5 text-xs sm:text-sm code-block text-slate-300 overflow-x-auto whitespace-pre"><code>research: {
+  title: "Research",
+  items: [
+    { 
+      img: <span class="text-yellow-300">"src/img/research_img_01.png"</span>, 
+      title: <span class="text-yellow-300">"有機合成や錯体合成による巨大なπ拡張系分子の創製"</span>, 
+      desc: <span class="text-yellow-300">"有機化学や錯体化学の合成法を利用して..."</span> 
+    },
+    // ...
+  ]
+}</code></div>
+      </section>
+
+      <section id="member" class="mb-12 scroll-mt-10">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-6">4. メンバー（経歴・学生）の更新</h2>
+        <p class="text-slate-600 mb-4 text-sm sm:text-base">教員の経歴（History）や、所属学生（Students）の人数・名前を更新します。</p>
+        <div class="bg-slate-800 rounded-lg p-4 sm:p-5 text-xs sm:text-sm code-block text-slate-300 overflow-x-auto whitespace-pre"><code><span class="text-emerald-400">// 経歴の追加</span>
+history: [
+  { year: <span class="text-yellow-300">"2026.01"</span>, event: <span class="text-yellow-300">"岐阜大学 工学部 ... 准教授（現職）"</span> }
+],
+
+<span class="text-emerald-400">// 学生の追加・変更（行をコピーして増やせます）</span>
+students: [
+  { grade: <span class="text-yellow-300">"M1 (修士1年)"</span>, count: <span class="text-yellow-300">"1名&lt;br&gt;・岐阜 太郎"</span> }, <span class="text-red-400 font-bold">&larr;最後のカンマ必須</span>
+  { grade: <span class="text-yellow-300">"B4 (学部4年)"</span>, count: <span class="text-yellow-300">"2名&lt;br&gt;・山野 拓海&lt;br&gt;・松尾 暁和"</span> }
+]</code></div>
+        <div class="mt-4 p-4 bg-slate-50 rounded-lg text-sm text-slate-600">
+          <strong class="text-slate-800">リスト内の改行：</strong><br>
+          学生の名前を列挙するなど、枠の中で改行したい場合は <strong><code>&lt;br&gt;</code></strong> と入力してください。
+        </div>
+      </section>
+
+      <section id="pub" class="mb-12 scroll-mt-10">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-6">5. 業績リンク（Publications）の変更</h2>
+        <p class="text-slate-600 mb-4 text-sm sm:text-base">researchmapなどの外部リンクURLを変更します。</p>
+        <div class="bg-slate-800 rounded-lg p-4 sm:p-5 text-xs sm:text-sm code-block text-slate-300 overflow-x-auto whitespace-pre"><code>pub: {
+  title: "Publications",
+  linkMsg: "こちらをご覧下さい。",
+  url: <span class="text-yellow-300">"https://researchmap.jp/7000016501?lang=ja"</span>
+}</code></div>
+      </section>
+
+      <section id="english" class="mb-12 scroll-mt-10">
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-6">6. 英語版ページ（EN）の更新について</h2>
+        <p class="text-slate-600 mb-4 text-sm sm:text-base">
+          <code>data.js</code> の後半には <code>en: { ... }</code> というブロックがあります。<br>
+          日本語版（<code>ja:</code>）でニュースやメンバーを追加した際は、必ずこちらの英語版（<code>en:</code>）の該当箇所にも英語で同様の追加を行ってください。
+        </p>
+      </section>
+
+      <section class="bg-slate-800 rounded-xl p-6 sm:p-8 text-center mt-12 border border-slate-700">
+        <h2 class="text-lg sm:text-xl font-bold text-white mb-4 flex items-center justify-center">
+          <i data-lucide="check-circle" class="w-6 h-6 text-emerald-400 mr-2"></i>作業完了後の確認
+        </h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          <code>data.js</code> を上書き保存し、ご自身のパソコンで <code>index.html</code> を開いてみてください。<br>
+          画面が真っ白になっていなければ成功です！表示内容を確認後、サーバーへアップロードしてください。
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    // アイコンの初期化
+    lucide.createIcons();
+  </script>
+</body>
+</html>
