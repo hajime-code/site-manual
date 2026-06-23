@@ -93,14 +93,15 @@ about: {
   title: "News",
   items: [
     <span class="text-emerald-400">// ↓新しいお知らせはここに追加します</span>
-    { date: <span class="text-yellow-300">"2026.05.01"</span>, text: <span class="text-yellow-300">"新しい論文が掲載されました。"</span>, isNew: <span class="text-blue-300">true</span> },
+    { date: <span class="text-yellow-300">"2026.05.01"</span>, text: <span class="text-yellow-300">"新しい論文が掲載されました。"</span>, isNew: <span class="text-blue-300">true</span>, img: <span class="text-yellow-300">"src/img/news_01.png"</span> },
     { date: "2026.04.01", text: "新四年生が配属されました。", isNew: false },
   ]
 }</code></div>
-        <ul class="list-disc pl-5 mt-4 text-slate-600 space-y-1 text-sm sm:text-base">
+        <ul class="list-disc pl-5 mt-4 text-slate-600 space-y-2 text-sm sm:text-base">
           <li><code>date</code> : 日付を半角で入力します。</li>
-          <li><code>text</code> : お知らせの内容を入力します。</li>
-          <li><code>isNew</code> : <code>true</code> で赤い「New」マークが付きます。不要になれば <code>false</code> に変更します。</li>
+          <li><code>text</code> : ニュースの文言（お知らせの内容）を入力します。</li>
+          <li><code>isNew</code> : <code>true</code> にすると赤い「New」マークが付きます。不要になれば <code>false</code> に変更してください。</li>
+          <li><code>img</code> : ニュースに画像を追加する場合、事前に <code>src/img</code> フォルダへ画像ファイルを保存し、<code>"src/img/ファイル名.png"</code> のようにパスを指定します。画像が不要な場合は、この項目ごと削除するか <code>img: ""</code> としてください。</li>
         </ul>
       </section>
 
