@@ -89,11 +89,22 @@ about: {
       <section id="news" class="mb-12 scroll-mt-10">
         <h2 class="text-xl sm:text-2xl font-bold text-slate-800 border-b-2 border-slate-200 pb-2 mb-6">2. ニュース（お知らせ）の追加</h2>
         <p class="text-slate-600 mb-4 text-sm sm:text-base">新しいお知らせは、<code>items: [ ]</code> の中の<strong>一番上の行</strong>にコピー＆ペーストして追加します。</p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 sm:p-5 mb-6 rounded-r-lg">
+          <h3 class="text-blue-800 font-bold text-sm sm:text-base mb-2 flex items-center">
+            <i data-lucide="info" class="w-5 h-5 mr-2"></i>【重要】画像を追加する際の仕組みについて
+          </h3>
+          <p class="text-blue-900 text-xs sm:text-sm leading-relaxed">
+            画像を表示するための、内部的なプログラム（JavaScript）の構造修正は<strong>初回のみ</strong>で完了しています。<br>
+            以降の更新ではプログラム本体を触る必要はありません。下記の通り <code>data.js</code> 内に画像のパス（<code>img: "./src/img/..."</code>）を追記するだけで、自動的に画像が表示されるようになっています。
+          </p>
+        </div>
+
         <div class="bg-slate-800 rounded-lg p-4 sm:p-5 text-xs sm:text-sm code-block text-slate-300 overflow-x-auto whitespace-pre"><code>news: {
   title: "News",
   items: [
     <span class="text-emerald-400">// ↓新しいお知らせはここに追加します</span>
-    { date: <span class="text-yellow-300">"2026.05.01"</span>, text: <span class="text-yellow-300">"新しい論文が掲載されました。"</span>, isNew: <span class="text-blue-300">true</span>, img: <span class="text-yellow-300">"src/img/news_01.png"</span> },
+    { date: <span class="text-yellow-300">"2026.05.01"</span>, text: <span class="text-yellow-300">"BBQをしました。"</span>, isNew: <span class="text-blue-300">true</span>, img: <span class="text-yellow-300">"./src/img/20260421_BBQ.png"</span> },
     { date: "2026.04.01", text: "新四年生が配属されました。", isNew: false },
   ]
 }</code></div>
@@ -101,7 +112,7 @@ about: {
           <li><code>date</code> : 日付を半角で入力します。</li>
           <li><code>text</code> : ニュースの文言（お知らせの内容）を入力します。</li>
           <li><code>isNew</code> : <code>true</code> にすると赤い「New」マークが付きます。不要になれば <code>false</code> に変更してください。</li>
-          <li><code>img</code> : ニュースに画像を追加する場合、事前に <code>src/img</code> フォルダへ画像ファイルを保存し、<code>"src/img/ファイル名.png"</code> のようにパスを指定します。画像が不要な場合は、この項目ごと削除するか <code>img: ""</code> としてください。</li>
+          <li><code>img</code> : 画像を追加する場合、事前に <code>src/img</code> フォルダへ画像を保存し、<strong>必ず先頭に「./」を付けて</strong> <code>"./src/img/ファイル名.png"</code> のように指定します。画像が不要な場合は、この項目ごと削除するか <code>img: ""</code> としてください。</li>
         </ul>
       </section>
 
